@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2814692128121504924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2814692128121504926}
+  - component: {fileID: 2814692128121504927}
+  - component: {fileID: 2814692128121504913}
+  - component: {fileID: 2814692128121504912}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2814692128121504926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814692128121504924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 163.81264, y: 64.95709, z: -26.046377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2814692128121504927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814692128121504924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d67481148cfa245b6fabd53e68741e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 0}
+  sentences:
+  - 'Stranger: Oh ... another guys lost in this turnel'
+  - 'Aphemos: ??? ... Who are you '
+  - Stranger:It  doesn't matter... I lost my castle .The castle is now filled with
+    monsters
+  - 'Aphemos : Now how I can escape here ?'
+  - 'Stranger : The door is over there...'
+  - ........... !
+  typingSpeed: 0.02
+  continueButton: {fileID: 0}
+--- !u!114 &2814692128121504913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814692128121504924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e21ac5288403d34ea5b5b1cc2eb03cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemies:
+  - {fileID: 4748066073960433803, guid: 0b1c207ef0c7bb3478dc569e57b1c8c3, type: 3}
+  - {fileID: 4474213817283096596, guid: 1745a9c2a1ff2f541a051999754c0f28, type: 3}
+  spawnHaveEnemies: 00000000
+  timeToSpawn:
+  - 0
+  - 0
+  - 0
+  - 0
+  timeToSpawnSetting: 5
+--- !u!114 &2814692128121504912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814692128121504924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdfdf5998f85fb41baeb645c5c14355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverPanel: {fileID: 0}

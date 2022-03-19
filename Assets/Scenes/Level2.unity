@@ -4129,6 +4129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCStory
       objectReference: {fileID: 0}
+    - target: {fileID: 1920469784711078503, guid: 6e195370df4c118488cb91b38c784087, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1920469784711078522, guid: 6e195370df4c118488cb91b38c784087, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4177,6 +4181,10 @@ PrefabInstance:
       propertyPath: dialougeUI
       value: 
       objectReference: {fileID: 1512075048}
+    - target: {fileID: 1920469785020605222, guid: 6e195370df4c118488cb91b38c784087, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1920469785020605240, guid: 6e195370df4c118488cb91b38c784087, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -4188,6 +4196,18 @@ PrefabInstance:
     - target: {fileID: 1920469785020605240, guid: 6e195370df4c118488cb91b38c784087, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920469785118333838, guid: 6e195370df4c118488cb91b38c784087, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920469785199232102, guid: 6e195370df4c118488cb91b38c784087, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920469786273210424, guid: 6e195370df4c118488cb91b38c784087, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e195370df4c118488cb91b38c784087, type: 3}

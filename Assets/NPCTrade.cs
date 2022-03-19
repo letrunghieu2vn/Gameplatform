@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NPCTrade : NPC
 {
-    public GameObject[] storePanel;
     bool activeBag = false;
 
     public override void Update()
@@ -13,16 +12,16 @@ public class NPCTrade : NPC
         if (Input.GetKeyDown(KeyCode.I))
         {
             activeBag = !activeBag;
-            storePanel[0].SetActive(activeBag);
+            if (activeBag)
+                UIManager.instace.GetUICanvas(UIName.UIBag).OnOpen();
+            else UIManager.instace.GetUICanvas(UIName.UIBag).OnClose();
         }
     }
     public override void OnTrigger()
     {
         base.OnTrigger();
-        foreach(GameObject gameObject in storePanel)
-        {
-            gameObject.SetActive(true);
-        }
+        UIManager.instace.GetUICanvas(UIName.UIBag).OnOpen();
+        UIManager.instace.GetUICanvas(UIName.UIStore).OnOpen();
     }
 
     public override void OnExit()
@@ -32,10 +31,8 @@ public class NPCTrade : NPC
 
     public void ExitStorePanel()
     {
-        foreach (GameObject gameObject in storePanel)
-        {
-            gameObject.SetActive(false);
-        }
+        UIManager.instace.GetUICanvas(UIName.UIBag).OnClose();
+        UIManager.instace.GetUICanvas(UIName.UIStore).OnClose();
     }
 
 }

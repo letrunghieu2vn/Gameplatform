@@ -17,10 +17,11 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void PLayerOntarget() {
+    public virtual void PLayerOntarget() {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, whatIsPlayer);
-        if (hit!=null)
+        if (hit != null)
         {
+            Debug.Log(hit);
             onTarget = true;
             guildeUI.SetActive(true);
             return;

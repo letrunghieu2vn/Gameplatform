@@ -7,10 +7,17 @@ public class UICanvas : MonoBehaviour
     public UIName UiName;
 
     public virtual void Start() {
-        OnInit();
+        OnInit();   
     }
 
-    public virtual void OnInit() { }
-    public virtual void OnOpen() { }
-    public virtual void OnClose() { }
+    public virtual void OnInit() {
+        UIManager.instace.AddUI(this);
+    }
+    public virtual void OnOpen() {
+        gameObject.SetActive(true);
+    }
+    public virtual void OnClose() {
+        gameObject.SetActive(false);
+    }
+
 }

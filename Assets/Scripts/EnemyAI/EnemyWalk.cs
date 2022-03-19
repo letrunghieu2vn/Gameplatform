@@ -72,12 +72,10 @@ public class EnemyWalk : MonoBehaviour
             currentStage = Stage.Idle;
             target = transform.position;
             myAnim.SetBool("walk", false);
-            Debug.Log("Quyet dinh la: Dung Im!");
         }
 
         if (decision > 3)
         {
-            Debug.Log("Quyet dinh la: Di Chuyen!");
             currentStage = Stage.Move;
             distanceToStop = 0.05f;
             target = SetUptargetTogoAround();
@@ -95,7 +93,6 @@ public class EnemyWalk : MonoBehaviour
         bouch *= -1;
         TargetNew.y = transform.position.y;
         currentStage = Stage.Move;
-        Debug.Log("Muc Tieu: "+TargetNew);
         return TargetNew;
     }
 

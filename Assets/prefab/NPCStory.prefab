@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1920469784711078520}
   - component: {fileID: 1920469784711078523}
   - component: {fileID: 1920469784711078524}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: NPCStory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920469784711078503}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.52, y: 1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -124,6 +124,8 @@ MonoBehaviour:
     m_Bits: 4096
   guildeUI: {fileID: 1920469786273210424}
   dialougeUI: {fileID: 0}
+  sentences:
+  - dm thang hieu lol
 --- !u!61 &1920469784711078524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,7 +163,7 @@ GameObject:
   - component: {fileID: 1920469785020605223}
   - component: {fileID: 1920469785020605241}
   - component: {fileID: 1920469785020605240}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: GuildeBackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +239,7 @@ GameObject:
   - component: {fileID: 1920469785118333839}
   - component: {fileID: 1920469785118333825}
   - component: {fileID: 1920469785118333824}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: GuildeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +318,7 @@ GameObject:
   - component: {fileID: 1920469785199232103}
   - component: {fileID: 1920469785199232121}
   - component: {fileID: 1920469785199232120}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,13 +394,13 @@ GameObject:
   - component: {fileID: 1920469786273210427}
   - component: {fileID: 1920469786273210426}
   - component: {fileID: 1920469786273210425}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1920469786273210428
 RectTransform:
   m_ObjectHideFlags: 0

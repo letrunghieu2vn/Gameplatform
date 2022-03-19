@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialog : MonoBehaviour
+public class UIDialogueManager : UICanvas
 {
+
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     private int index;
@@ -12,28 +13,29 @@ public class Dialog : MonoBehaviour
 
     public GameObject continueButton;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+    }
+
+    public void StartSentences(string[] _sentences) {
+        sentences = _sentences;
+        continueButton.SetActive(true);
+        textDisplay.text = "";
         StartCoroutine(Type());
     }
-     void Update()
-    {
-        if(textDisplay.text == sentences[index])
-        {
-            continueButton.SetActive(true);
-        }
-    }
+
     IEnumerator Type()
     {
-        foreach(char letter in sentences[index].ToCharArray())
-                {
-                      textDisplay.text += letter;
-                      yield return new WaitForSeconds(typingSpeed);
+        foreach (char letter in sentences[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
         }
 
     }
-    public void NextSentence() {
-        continueButton.SetActive(false);
+    public void NextSentence()
+    {
 
         if (index < sentences.Length - 1)
         {

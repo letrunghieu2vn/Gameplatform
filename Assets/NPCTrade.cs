@@ -5,7 +5,6 @@ using UnityEngine;
 public class NPCTrade : NPC
 {
     bool activeBag = false;
-
     public override void Update()
     {
         base.Update();

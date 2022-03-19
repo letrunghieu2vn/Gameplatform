@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class NPCStory : NPC
 {
-    public GameObject dialougeUI;
+    [TextArea(3, 5)]
+    public string[] sentences;
+
     public override void Update()
     {
         base.Update();
@@ -13,12 +15,16 @@ public class NPCStory : NPC
     public override void OnTrigger()
     {
         base.OnTrigger();
-        dialougeUI.SetActive(true);
+        UICanvas dialougeCanvas = UIManager.instace.GetUICanvas(UIName.UIDialouge);
+        UIDialogueManager dialogueManager = dialougeCanvas.GetComponent<UIDialogueManager>();
+        dialougeCanvas.OnOpen();
+        dialogueManager.StartSentences(sentences);
+        
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        dialougeUI.SetActive(false);
+        UIManager.instace.GetUICanvas(UIName.UIDialouge).OnClose();
     }
 }

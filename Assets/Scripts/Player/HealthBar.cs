@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
     {  
         if(health<= 0)
         {
-            UImanager.instance.GameOver();
+            //UImanager.instance.GameOver();
 
         }
 

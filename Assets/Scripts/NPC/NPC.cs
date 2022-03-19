@@ -21,7 +21,6 @@ public class NPC : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, whatIsPlayer);
         if (hit != null)
         {
-            Debug.Log(hit);
             onTarget = true;
             guildeUI.SetActive(true);
             return;

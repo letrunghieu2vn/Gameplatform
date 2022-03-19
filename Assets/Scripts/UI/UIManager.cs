@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UIName {UIMenu, UIStore, UIBag}
+public enum UIName {UIMenu, UIStore, UIBag, UIPause, UIGameOver, UIDialouge}
 public class UIManager : MonoBehaviour
 {
-    public List<UICanvas> uICanvas = new List<UICanvas>();
+    public List<UICanvas> uICanvases;
     public static UIManager instace;
     private void Awake()
     {
@@ -14,11 +14,38 @@ public class UIManager : MonoBehaviour
         else instace = this;
     }
 
-    public UICanvas GetUICanvas(UIName uiFindName) {
-        for (int i = 0; i < uICanvas.Count; i++)
+    bool GameIsPaused;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (uICanvas[i].UiName == uiFindName)
-                return uICanvas[i];
+            if (GameIsPaused)
+                Resume();
+            else
+                Pause();
+            GameIsPaused = !GameIsPaused;
+        }
+    }
+
+    void Resume() {
+        GetUICanvas(UIName.UIGameOver).gameObject.SetActive(false);
+    }
+    void Pause() {
+        GetUICanvas(UIName.UIGameOver).gameObject.SetActive(true);
+    }
+
+    public void AddUI(UICanvas uICanvas) {
+        uICanvases.Add(uICanvas);
+        if (uICanvas.UiName == UIName.UIMenu)
+            return;
+        uICanvas.OnClose();
+    }
+    public UICanvas GetUICanvas(UIName uiFindName) {
+        for (int i = 0; i < uICanvases.Count; i++)
+        {
+            if (uICanvases[i].UiName == uiFindName)
+                return uICanvases[i];
         }
         return null;
     }

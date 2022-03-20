@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2814692128121504926}
-  - component: {fileID: 188854979}
   - component: {fileID: 188854980}
   - component: {fileID: 5635609991199390285}
   - component: {fileID: 989649606671517899}
+  - component: {fileID: 6833291990924380254}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &188854979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2814692128121504924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7316bd108b506245a0d56c68f8c673f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uICanvases: []
 --- !u!114 &188854980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,3 +76,15 @@ MonoBehaviour:
   slotBag: {fileID: 6644038733186985439, guid: fe849dc43e0c6b349bb83e58aaa990cc, type: 3}
   countSlotBag: 42
   bagParentTransform: {fileID: 0}
+--- !u!114 &6833291990924380254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814692128121504924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ed64d784eec434b8b544d350116e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -3,14 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWalk : MonoBehaviour
+public class EnemyWalk : Enemy
 {
-    Rigidbody2D myBody;
-    Animator myAnim;
     public Vector3 target;
     public float speed;
     public float viewFar;
-    bool facingRight = true;
 
     Vector2 endPoint;
 
@@ -36,7 +33,8 @@ public class EnemyWalk : MonoBehaviour
                 Movement();
             else
             {
-                currentStage = Stage.Idle;
+                currentStage = Stage.Attack;
+                Attack();
                 myAnim.SetBool("walk", false);
             }
         }
@@ -44,24 +42,34 @@ public class EnemyWalk : MonoBehaviour
 
     }
 
-    private void Awake()
-    {
-        myBody = GetComponent<Rigidbody2D>();
-        myAnim = GetComponent<Animator>();
-    }
-
-    private void Start()
+    public override void Start()
     {
         spawnPoint = transform.position;
     }
 
     private void Update()
     {
+        if (attackCD > 0f)
+            attackCD -= Time.deltaTime;
+
         if (!PlayerOnMyView() && currentStage == Stage.Idle && nextTimeDecision <= 0f)
             MakeDecision();
 
         if (nextTimeDecision > 0f)
             nextTimeDecision -= Time.deltaTime;
+    }
+    public Transform attackPoint;
+    public float attackRange;
+    public float attackCDSetting;
+    private float attackCD;
+    void Attack() {
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRange, whatIsPlayer);
+        if (attackCD <= 0f && hit != null)
+        {
+            attackCD = attackCDSetting;
+            PlayerManager playerActor = hit.GetComponent<PlayerManager>();
+            playerActor.TakeDamage(m_Damage);
+        }
     }
 
     void MakeDecision() {
@@ -105,9 +113,6 @@ public class EnemyWalk : MonoBehaviour
              Flip();
     }
 
-
-        
-
     bool PlayerOnMyView() {
         endPoint = (Vector2)transform.position - new Vector2(viewFar, 0);
         RaycastHit2D hitPlayer = Physics2D.Linecast(transform.position, endPoint, whatIsPlayer);
@@ -123,6 +128,7 @@ public class EnemyWalk : MonoBehaviour
 
         }
         else {
+            distanceToStop = .2f;
             Debug.DrawLine(transform.position, endPoint, Color.green);
         }
         

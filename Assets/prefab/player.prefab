@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 3110621816214759140}
   - component: {fileID: 3110621816214759138}
   - component: {fileID: 3110621816214759136}
-  - component: {fileID: 3110621816214759141}
-  - component: {fileID: 3110621816214759137}
+  - component: {fileID: 5595102003539470629}
   m_Layer: 12
   m_Name: player
   m_TagString: Untagged
@@ -188,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 3110621816693848118}
   bulletPrefab: {fileID: 8400338640685731906, guid: 7f0ae53292818b045aeae633cdc23a4a, type: 3}
---- !u!114 &3110621816214759141
+--- !u!114 &5595102003539470629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,30 +196,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3110621816214759163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86aca0516e34ab34caf28a6367877e58, type: 3}
+  m_Script: {fileID: 11500000, guid: 950c689ed96ca1b418d0d7f05d133c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  jumpForce: 17
+  m_Health: 100
+  m_Max_Health: 100
+  m_Stamina: 0
+  m_Max_Stamina: 0
+  m_Speed: 4
+  facingRight: 1
+  myBody: {fileID: 0}
+  myAnim: {fileID: 0}
+  jumpForce: 15
   groundCheck: {fileID: 3110621817595246070}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
-  radiusCheck: 0.1
---- !u!114 &3110621816214759137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3110621816214759163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f034b7d9098fbc46ac966f5f970eb56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillbar: {fileID: 0}
-  health: 100
+  radiusCheck: 0.2
 --- !u!1 &3110621816693848073
 GameObject:
   m_ObjectHideFlags: 0

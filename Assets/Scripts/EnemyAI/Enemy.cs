@@ -3,28 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Actor
 {
-    public int health = 100;
-    public float eDamage;
     public GameObject deathEffect;
     public Transform mySpawnPoint;
-    private HealthBar playerHealth;
 
-    public void TakeDamage(int damage)
+    public override void ChangeHealth(float valueChange)
     {
-        health -= damage;
-
-        if (health <= 0)
+        base.ChangeHealth(valueChange);
+        if (m_Health <= 0)
         {
             SpawnPoint.instance.ChangeTime(mySpawnPoint);
             Die();
         }
-    }
-
-    internal void ChangeHp(float damage)
-    {
-        throw new NotImplementedException();
     }
 
     void Die()
@@ -33,13 +24,5 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == 12)
-        {
-            playerHealth = collision.GetComponent<HealthBar>();
-            playerHealth.TakeDamage(eDamage);
-        }    
-    }
 }
  

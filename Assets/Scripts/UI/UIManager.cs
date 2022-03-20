@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UIName {UIMenu, UIStore, UIBag, UIPause, UIGameOver, UIDialouge}
+public enum UIName {UIMenu, UIStore, UIBag, UIPause, UIGameOver, UIDialouge, UIPlayer}
 public class UIManager : MonoBehaviour
 {
     public List<UICanvas> uICanvases;
@@ -15,24 +15,35 @@ public class UIManager : MonoBehaviour
     }
 
     bool GameIsPaused;
+    public bool gamePlayed;
+    bool activeBag;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && gamePlayed)
         {
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
             GameIsPaused = !GameIsPaused;
+            if (GameIsPaused)
+                Pause();
+            else
+                Resume();
+            
+        }
+        if (Input.GetKeyDown(KeyCode.I) && gamePlayed)
+        {
+            activeBag = !activeBag;
+            if (activeBag)
+                UIManager.instace.GetUICanvas(UIName.UIBag).OnOpen();
+            else UIManager.instace.GetUICanvas(UIName.UIBag).OnClose();
         }
     }
 
     void Resume() {
-        GetUICanvas(UIName.UIGameOver).gameObject.SetActive(false);
+        GetUICanvas(UIName.UIPause).gameObject.SetActive(false);
     }
     void Pause() {
-        GetUICanvas(UIName.UIGameOver).gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        GetUICanvas(UIName.UIPause).gameObject.SetActive(true);
     }
 
     public void AddUI(UICanvas uICanvas) {
@@ -48,5 +59,20 @@ public class UIManager : MonoBehaviour
                 return uICanvases[i];
         }
         return null;
+    }
+    public void GameOver() {
+        Time.timeScale = 0f;
+        GetUICanvas(UIName.UIGameOver).OnOpen();
+    }
+    public void ResetAllUI() {
+        for (int i = 0; i < uICanvases.Count; i++)
+        {
+            uICanvases[i].OnClose();
+        }
+
+        GetUICanvas(UIName.UIMenu).OnOpen();
+        GameIsPaused = false;
+        gamePlayed = false;
+        activeBag = false;
     }
 }

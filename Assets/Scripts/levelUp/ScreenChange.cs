@@ -17,7 +17,7 @@ public class ScreenChange : MonoBehaviour
             instance = this;
         }
     }
-    public void ThayDoiManChoi(int index)
+    public void ScenceChange(int index)
     {
         SceneManager.LoadScene(index);
     }

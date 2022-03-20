@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4474213817283096587}
   - component: {fileID: 4474213817283096591}
   - component: {fileID: 4474213817283096584}
-  - component: {fileID: 4474213817283096590}
   - component: {fileID: 4474213817283096589}
   - component: {fileID: 1109369647}
   m_Layer: 14
@@ -33,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 5811712559273385181}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -154,22 +154,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.65429974, y: 0.9044848}
   m_EdgeRadius: 0
---- !u!114 &4474213817283096590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4474213817283096596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 595b6cb23f348b24cb5f3e1e4036f2b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  eDamage: 25
-  deathEffect: {fileID: 0}
-  mySpawnPoint: {fileID: 0}
 --- !u!114 &4474213817283096589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +166,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6efb4e2c06318b64c89f58851940bec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Health: 100
+  m_Max_Health: 100
+  m_Stamina: 0
+  m_Max_Stamina: 0
+  m_Damage: 20
+  m_Speed: 0
+  facingRight: 1
+  myBody: {fileID: 0}
+  myAnim: {fileID: 0}
+  deathEffect: {fileID: 0}
+  mySpawnPoint: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
   speed: 2
   viewFar: 5
@@ -189,11 +184,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   spawnPoint: {x: 0, y: 0, z: 0}
-  distanceStopSetting: 0.5
+  distanceStopSetting: 1.5
   distanceToStop: 0
   currentStage: 0
   nextTimeDecision: 0
   nextTimeDecisionSetting: 3
+  attackPoint: {fileID: 5811712559273385181}
+  attackRange: 0.2
+  attackCDSetting: 3
 --- !u!61 &1109369647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -220,3 +218,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1201823, y: 1.0031682}
   m_EdgeRadius: 0
+--- !u!1 &5443655916946248917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5811712559273385181}
+  m_Layer: 14
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5811712559273385181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443655916946248917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.86, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4474213817283096585}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

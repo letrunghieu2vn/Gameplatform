@@ -8,10 +8,12 @@ public class UIMainMenuManager : UICanvas
 {
     public Button playButton;
     public Button quitButton;
+    ScreenChange screenChange;
 
     public override void Start()
     {
         base.Start();
+        screenChange = ScreenChange.instance;
         playButton.onClick.AddListener(PlayGame);
         quitButton.onClick.AddListener(QuitGame);
     }
@@ -23,8 +25,9 @@ public class UIMainMenuManager : UICanvas
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         UIManager.instace.GetUICanvas(UIName.UIMenu).OnClose();
+        UIManager.instace.GetUICanvas(UIName.UIPlayer).OnOpen();
+        screenChange.ScenceChange(1);
     }
 
     public void QuitGame()

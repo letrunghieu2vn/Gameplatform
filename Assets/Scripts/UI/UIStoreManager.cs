@@ -7,7 +7,6 @@ public class UIStoreManager : UICanvas
     public override void Start()
     {
         base.Start();
-        Debug.Log("dd");
     }
 
     public override void OnClose()

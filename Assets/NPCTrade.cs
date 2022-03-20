@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class NPCTrade : NPC
 {
-    bool activeBag = false;
+    
     public override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            activeBag = !activeBag;
-            if (activeBag)
-                UIManager.instace.GetUICanvas(UIName.UIBag).OnOpen();
-            else UIManager.instace.GetUICanvas(UIName.UIBag).OnClose();
-        }
     }
     public override void OnTrigger()
     {

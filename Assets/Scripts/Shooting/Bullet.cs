@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
         if(enemy !=null)
         {
-            enemy.TakeDamage(damage);
+            enemy.ChangeHealth(-damage);
         }
         Destroy(gameObject);
 
@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour
     {
         myBody.MovePosition(myBody.position + (Vector2)transform.right * bulletSpeed * Time.deltaTime);
     }
-
 
 
 }

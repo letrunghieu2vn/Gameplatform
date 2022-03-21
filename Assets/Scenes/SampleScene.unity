@@ -4571,6 +4571,10 @@ PrefabInstance:
       propertyPath: iLevelToLoad
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1267903498, guid: 06225338c266f8e4790d7cae50f8789b, type: 3}
+      propertyPath: sLevelToLoad
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1757674730158445739, guid: 06225338c266f8e4790d7cae50f8789b, type: 3}
       propertyPath: m_Name
       value: enviroment

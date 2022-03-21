@@ -6,21 +6,9 @@ using UnityEngine.SceneManagement;
 public class loadLevel : MonoBehaviour
 {
     public int iLevelToLoad;
-    public string sLevelToLoad;
+    public int sLevelToLoad;
 
     public bool useIntegerToLoadLevel = false;
-        
-    void Start()
-    {
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,11 +24,11 @@ public class loadLevel : MonoBehaviour
     {
         if(useIntegerToLoadLevel)
         {
-            SceneManager.LoadScene(iLevelToLoad);
+            ScreenChange.instance.ScenceChange(iLevelToLoad);
         }
         else
         {
-            SceneManager.LoadScene(sLevelToLoad);
+            ScreenChange.instance.ScenceChange(sLevelToLoad);
         }
     }
 }

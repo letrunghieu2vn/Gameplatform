@@ -19,13 +19,13 @@ public class PlayerManager : Actor
 
     public override void Start()
     {
-        uIPlayerManager = UIPlayerManager.instance;
         base.Start();
     }
 
     public override void OnInit()
     {
         base.OnInit();
+        uIPlayerManager = UIPlayerManager.instance;
         BarController healthBarController = uIPlayerManager.GetBarController(BarName.HealthBar);
         healthBarController.OnInit(m_Max_Health, m_Health);
     }

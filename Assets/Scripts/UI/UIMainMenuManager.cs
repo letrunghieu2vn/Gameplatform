@@ -10,23 +10,21 @@ public class UIMainMenuManager : UICanvas
     public Button quitButton;
     ScreenChange screenChange;
 
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
+    }
+
+    private void Start()
+    {
         screenChange = ScreenChange.instance;
         playButton.onClick.AddListener(PlayGame);
         quitButton.onClick.AddListener(QuitGame);
     }
 
-    public override void OnInit()
-    {
-        UIManager.instace.AddUI(this);
-    }
-
     public void PlayGame()
     {
         UIManager.instace.GetUICanvas(UIName.UIMenu).OnClose();
-        UIManager.instace.GetUICanvas(UIName.UIPlayer).OnOpen();
         screenChange.ScenceChange(1);
     }
 

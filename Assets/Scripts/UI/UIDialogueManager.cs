@@ -13,9 +13,9 @@ public class UIDialogueManager : UICanvas
 
     public GameObject continueButton;
 
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
     }
 
     public void StartSentences(string[] _sentences) {

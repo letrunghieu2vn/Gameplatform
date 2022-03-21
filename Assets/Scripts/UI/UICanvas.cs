@@ -5,9 +5,8 @@ using UnityEngine;
 public class UICanvas : MonoBehaviour
 {
     public UIName UiName;
-
-    public virtual void Start() {
-        OnInit();   
+    public virtual void Awake() {
+        OnInit();
     }
 
     public virtual void OnInit() {

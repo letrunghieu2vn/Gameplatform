@@ -7,20 +7,17 @@ public class UIPlayerManager : UICanvas
 {
 
     public static UIPlayerManager instance;
-    private void Awake()
-    {
-        instance = this;
-    }
+
     public List<BarController> barControllers;
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
+        instance = this;
     }
     public void AddBarController(BarController barController) {
         barControllers.Add(barController);
     }
     public BarController GetBarController(BarName _barName) {
-
         for (int i = 0; i < barControllers.Count; i++)
         {
             if (barControllers[i].barName == _barName) {

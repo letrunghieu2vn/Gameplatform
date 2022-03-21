@@ -203,11 +203,12 @@ MonoBehaviour:
   m_Max_Health: 100
   m_Stamina: 0
   m_Max_Stamina: 0
+  m_Damage: 0
   m_Speed: 4
   facingRight: 1
   myBody: {fileID: 0}
   myAnim: {fileID: 0}
-  jumpForce: 15
+  jumpForce: 20
   groundCheck: {fileID: 3110621817595246070}
   whatIsGround:
     serializedVersion: 2

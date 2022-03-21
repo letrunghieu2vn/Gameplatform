@@ -1,20 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class HealthBar : BarController
+public class LoadingBar : BarController
 {
-
-    UIPlayerManager uIPlayerManager;
     public override void Start()
     {
         base.Start();
-        uIPlayerManager = UIPlayerManager.instance;
-        uIPlayerManager.AddBarController(this);
     }
-
     public override void OnChangeBar(float valueChange)
     {
-        base.OnChangeBar(valueChange);
+        currentValue = valueChange;
+        barSlide.fillAmount = currentValue;
     }
 }

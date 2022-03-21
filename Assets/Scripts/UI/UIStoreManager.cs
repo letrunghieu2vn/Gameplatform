@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UIStoreManager : UICanvas
 {
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
     }
 
     public override void OnClose()

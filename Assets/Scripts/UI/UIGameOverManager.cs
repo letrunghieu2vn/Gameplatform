@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UIGameOverManager : UICanvas
 {
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
     }
 }

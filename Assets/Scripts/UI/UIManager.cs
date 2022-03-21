@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UIName {UIMenu, UIStore, UIBag, UIPause, UIGameOver, UIDialouge, UIPlayer}
+public enum UIName {UIMenu, UIStore, UIBag, UIPause, UIGameOver, UIDialouge, UIPlayer, UILoading}
 public class UIManager : MonoBehaviour
 {
     public List<UICanvas> uICanvases;
@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
         else instace = this;
     }
 
-    bool GameIsPaused;
+    public bool GameIsPaused;
     public bool gamePlayed;
     bool activeBag;
 
@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         GetUICanvas(UIName.UIGameOver).OnOpen();
     }
-    public void ResetAllUI() {
+    void ResetAllUI() {
         for (int i = 0; i < uICanvases.Count; i++)
         {
             uICanvases[i].OnClose();
@@ -74,5 +74,19 @@ public class UIManager : MonoBehaviour
         GameIsPaused = false;
         gamePlayed = false;
         activeBag = false;
+    }
+
+    public void OnChangeScenes(int currentScencesIndex) {
+        if (currentScencesIndex == 0)
+            ResetAllUI();
+        else {
+            for (int i = 0; i < uICanvases.Count; i++)
+            {
+                if (uICanvases[i].UiName == UIName.UIMenu)
+                    uICanvases[i].OnClose();
+                else if (uICanvases[i].UiName == UIName.UIPlayer)
+                    uICanvases[i].OnOpen();
+            }
+        }
     }
 }

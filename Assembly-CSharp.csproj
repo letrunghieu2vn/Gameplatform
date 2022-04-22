@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7426C78F-9813-6746-F08C-1550CC5BD1B9}</ProjectGuid>
+    <ProjectGuid>{B462670E-68A1-C4B9-CA41-18858CF7DB26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,9 +53,8 @@
     <UnityVersion>2020.3.27f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\levelUp\ScreenChange.cs" />
@@ -64,29 +63,34 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\EnemyAI\Enemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
-    <Compile Include="Assets\Scripts\Dialog\Dialog.cs" />
-    <Compile Include="Assets\Scripts\Player\LevelManager.cs" />
     <Compile Include="Assets\Scripts\UI\SlotObj\SlotStore.cs" />
-    <Compile Include="Assets\Scripts\MenuGame\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\Actor.cs" />
     <Compile Include="Assets\Scripts\Item\Item.cs" />
-    <Compile Include="Assets\Scripts\Dialog\UImanager.cs" />
     <Compile Include="Assets\Scripts\UI\Input\InputFieldCl.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Scripts\UI\UIPauseManager.cs" />
     <Compile Include="Assets\Scripts\Shooting\Weapon.cs" />
     <Compile Include="Assets\Scripts\Manager\BagManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Scripts\UI\Bar\LoadingBar.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\Scripts\UI\UIGameOverManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UILoadingManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Bar\BarController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\UI\TabButton.cs" />
+    <Compile Include="Assets\Scripts\UI\UICanvas.cs" />
+    <Compile Include="Assets\Scripts\DontDestroyThis.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\UI\StorePage.cs" />
-    <Compile Include="Assets\Scripts\Player\HealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\Scripts\UI\Bar\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\UI\UIBagManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Shooting\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Player\LifeCount.cs" />
+    <Compile Include="Assets\Scripts\UI\UIMainMenuManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -99,14 +103,16 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\SlotObj\SlotUI.cs" />
     <Compile Include="Assets\Scripts\EnemyAI\pathfinder.cs" />
+    <Compile Include="Assets\Scripts\UI\UIPlayerManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\GFXminiBoss\EnemyGFX.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCStory.cs" />
+    <Compile Include="Assets\Scripts\UI\UIStoreManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\UI\UIDialogueManager.cs" />
     <Compile Include="Assets\Scripts\EnemyAI\EnemyWalk.cs" />
     <Compile Include="Assets\Scripts\GFXminiBoss\Miniboss_1GFX.cs" />
     <Compile Include="Assets\Scripts\UI\SlotObj\SlotBag.cs" />
-    <Compile Include="Assets\Scripts\Manager\GameOverScreen.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -116,7 +122,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\Scripts\Manager\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\UI\TabGroup.cs" />
     <Compile Include="Assets\Scripts\EnemyAI\EnemyAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
@@ -124,7 +129,6 @@
     <Compile Include="Assets\NPCTrade.cs" />
     <Compile Include="Assets\Scripts\levelUp\loadLevel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\DontDestroyThis.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -826,15 +830,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{FA729AD2-DFC3-9C15-971C-0DBD6D3E40A1}</Project>
+      <Project>{389B892C-0B43-68A7-A8E1-67156E9EC1F3}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{C13BE5BE-03F0-20AC-6C2E-F13156B78154}</Project>
+      <Project>{15F3BF58-CD6A-D5E6-7596-F190E178DE4A}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{8C2F7753-86A0-0962-6823-DA135CE08265}</Project>
+      <Project>{B820BCFA-E895-B7C0-1959-8BB97A64AD3C}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>

@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &98008540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,10 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1175840254}
+  - {fileID: 929054615}
+  - {fileID: 657680996}
+  - {fileID: 180620922}
   enemies:
   - {fileID: 4748066073960433803, guid: 0b1c207ef0c7bb3478dc569e57b1c8c3, type: 3}
   - {fileID: 4474213817283096596, guid: 1745a9c2a1ff2f541a051999754c0f28, type: 3}
@@ -179,7 +179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &102026686
 GameObject:
@@ -1007,7 +1007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920469784711078522, guid: 6e195370df4c118488cb91b38c784087, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1920469784711078522, guid: 6e195370df4c118488cb91b38c784087, type: 3}
       propertyPath: m_LocalPosition.x
